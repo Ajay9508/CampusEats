@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampusEats | Secured Menu API</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <p class="eyebrow">CS543 · Assignment 09</p>
+      <h1>CampusEats</h1>
+      <p class="subtitle">A REST API secured with JWT authentication and role-based access.</p>
+    </header>
+
+    <section class="panel" id="loginPanel">
+      <h2>Sign in</h2>
+      <p class="muted">Use one of the demo accounts listed below.</p>
+      <form id="loginForm">
+        <label>Email<input id="email" type="email" value="ajay@campus.edu" required /></label>
+        <label>Password<input id="password" type="password" value="customer123" required /></label>
+        <button type="submit">Login</button>
+      </form>
+      <div class="demo">
+        <div><strong>Customer</strong><br><code>ajay@campus.edu</code><br><code>customer123</code></div>
+        <div><strong>Manager</strong><br><code>manager@campus.edu</code><br><code>manager123</code></div>
+        <div><strong>Restaurant</strong><br><code>mealhub@campus.edu</code><br><code>resto123</code></div>
+      </div>
+      <p id="loginMessage" class="message" role="status"></p>
+    </section>
+
+    <section class="panel hidden" id="appPanel">
+      <div class="toolbar">
+        <div><h2>Menu items</h2><p id="userInfo" class="muted"></p></div>
+        <button id="logoutButton" class="secondary" type="button">Logout</button>
+      </div>
+      <button id="refreshButton" class="secondary" type="button">Refresh items</button>
+      <p id="itemsMessage" class="message" role="status"></p>
+      <div id="itemsList" class="items"></div>
+
+      <form id="createForm" class="create-form hidden">
+        <h3>Add a menu item</h3>
+        <label>Item name<input id="itemName" required maxlength="80" /></label>
+        <label>Price (₹)<input id="itemPrice" type="number" min="0" step="0.01" required /></label>
+        <label class="check"><input id="itemAvailable" type="checkbox" checked /> Available</label>
+        <button type="submit">Create item</button>
+      </form>
+      <p id="createMessage" class="message" role="status"></p>
+    </section>
+    <footer>Assignment 09 security</footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
